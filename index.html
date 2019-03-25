@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" type="image/png" href="./img/canvas.png" />
+
+  <title>Dibujando con Canvas</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/one-page-wonder.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Inicio</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#mas">Conocer más</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#dibujar">Dibujar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead text-center text-white">
+    <div class="masthead-content pt-5 mt-5">
+      <div class="container pt-5">
+        <h1 class="masthead-heading mb-0">CANVAS - HTML5</h1>
+        <h2 class="masthead-subheading mb-0">Vamos a dibujar</h2>
+        <a href="#mas" class="btn btn-primary btn-xl rounded-pill mt-5">Conocer más</a>
+      </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+  </header>
+
+  <section class="canvas text-center text-white bg-black pt-5" id="mas">
+    <div class="canvas-content">
+      <div class="container">
+        <h1 class="canvas-heading mb-0 pt-5 pb-2"> <a href="https://es.wikipedia.org/wiki/Canvas_(HTML)" target="_blank">CANVAS - HTML5</a></h1>
+        <h5 class="canvas-subheading mb-0"><p> Canvas (o "lienzo" traducido al español) es un elemento HTML 
+          incorporado en HTML5 que permite la generación de gráficos dinámicamente por medio del scripting. 
+          Entre otras cosas, permite la renderización interpretada dinámica de gráficos 2D y mapas de bits, 
+          asi como animaciones con estos gráficos. Se trata de un modelo de procedimiento de bajo nivel, 
+          que actualiza un mapa de bits y no tiene una gráfica de escena integrada.</p>
+          <p>Canvas fue introducido inicialmente por Apple para su uso dentro de su propio componente de Mac OS X
+          Surgido en 2004, para empujar aplicaciones como widgets de Dashboard y el navegador Safari. Más tarde, 
+          en 2005, se adoptó en la versión 1.8 de los navegadores Gecko y Opera en 2006. Fue estandarizado por el 
+          Grupo de Trabajo de Tecnologías de Aplicación de hipertexto Web (WHATWG por sus siglas en inglés) sobre
+          las nuevas especificaciones propuestas para tecnologías web de última generación.</p>
+          <p>El Canvas consiste en una región dibujable definida en el código HTML con atributos de altura y ancho. 
+          El código JavaScript puede acceder a la zona a través de un conjunto completo de funciones similares a las
+          de otras APIs comunes de dibujo 2D, permitiendo así que los gráficos sean generados dinámicamente. Algunos 
+          de los usos previstos incluyen construcción de gráficos, animaciones, juegos, y la composición de imágenes.</p></h5>
+        <a href="#dibujar" class="btn btn-primary btn-xl rounded-pill mt-5 mb-5">¡A dibujar!</a>
+      </div>
+    </div>
+  </section>
+
+<!-- CANVAS lineas -->
+  <section id="dibujar">
+    <div class="container">
+      <h2 class="display-4 pt-5 mt-5 text-center">Vamos a dibujar líneas</h2>
+      <hr class="divider" style="max-width: 75%; border-width: .2rem; border-color: #4594c1;"> 
+      <div class="row text-center">
+        <div class="col-lg-6 order-lg-1 p-5">
+          <div class="p-5">           
+            <div class="row pt-5 text-center">
+              <div class="col-lg-12 text-center">            
+                <h5 class="mb-0">¿Cuántas líneas?  <input id="texto_lineas" type="text"/></h5> 
+              </div>              
+              <div class="col-sm-12 col-lg-12 text-center pt-3">
+                <button class="btn btn-primary btn-sl rounded-pill" id="botonazo" type="button">Dibujar</button>
+                <button class="btn btn-primary btn-sl rounded-pill" id="botonazo" type="button" onclick="limpiarLienzo()">Borrar</button>
+              </div>
+            </div> 
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-2">
+          <div class="p-5">
+            <canvas width="300" height="300" id="dibujo"></canvas>
+          </div>
+        </div>        
+      </div>                           
+      
+    </div>
+  </section>
+
+  <!-- CANVAS teclas -->
+  <section>
+    <div class="container">
+        <h2 class="display-4 text-center pt-5 mt-5">Dibujar con teclas de dirección</h2>
+        <hr class="divider" style="max-width: 75%; border-width: .2rem; border-color: #4594c1;"> 
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="p-5">
+              <canvas width="300" height="300" id="dibujo2"></canvas>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-5">
+            <h5>Instrucciones:</h5>
+            <ul>
+              <li>Para dirigir la línea hacia arriba <i class="fas fa-caret-square-up"></i></li>
+              <li>Para dirigir la línea hacia abajo <i class="fas fa-caret-square-down"></i></li>
+              <li>Para dirigir la línea hacia la derecha <i class="fas fa-caret-square-right"></i></li>
+              <li>Para dirigir la línea hacia la izquierda <i class="fas fa-caret-square-left"></i></li>
+            </ul>
+            <div class="text-center">
+            <button class="btn btn-primary btn-sl rounded-pill" id="botonazo" type="button" onclick="limpiarLienzoTeclas()">Borrar</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <div class="p-5">
+            <img class="img-fluid rounded-circle" src="img/03.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="p-5">
+            <h2 class="display-4">Let there be rock!</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-black">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6 class="text-muted text-center small">Proyecto desarrollado dentro del curso <a href="https://bedu.org/producto/full-stack-javascript/" target="_blank">Full Stack JavaScript</a> 2019.</h6>
+          <p class="m-0 text-muted text-center small">Copyright &copy; Práctica con Canvas 2019 <a href="https://startbootstrap.com/themes/one-page-wonder/" target="_blank">  Theme</a></p>
+        </div>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Dibujar con canvas -->
+  <script src="dibujar.js"></script>
+
+</body>
+
+</html>
